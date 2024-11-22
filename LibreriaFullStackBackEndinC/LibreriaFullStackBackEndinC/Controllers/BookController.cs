@@ -25,7 +25,7 @@ namespace LibreriaFullStackBackEndinC.Controllers
             return Ok(books);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<BookModel>> getBookById(int id)
         {
             var book = await _dbContext.Books.FindAsync(id);
@@ -68,16 +68,16 @@ namespace LibreriaFullStackBackEndinC.Controllers
             }
             else { return NotFound(); }
         }
-        [HttpGet("{name}")]
-        public async Task<ActionResult<BookModel>> getBookByTitle(string title)
+        [HttpGet("{title}")]
+        public async Task<ActionResult<IEnumerable<BookModel>>> getBooksByTitle(string title)
         {
-            var bookByTitle = await _dbContext.Books.FirstOrDefaultAsync(b => b.title == title);
+            var books = await _dbContext.Books.Where(b => b.title.Contains(title)).ToListAsync();
 
-            if (bookByTitle != null)
+            if (books == null || books.Count == 0)
             {
-                return Ok(bookByTitle);
+                return NotFound();
             }
-            return NotFound();
+            return Ok(books);
         }
     }
 }
