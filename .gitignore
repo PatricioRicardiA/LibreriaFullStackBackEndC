@@ -1,0 +1,64 @@
+# Archivos de configuración del entorno
+.vscode/
+.idea/
+
+# Archivos de compilación
+bin/
+obj/
+
+# Archivos de distribución
+publish/
+out/
+
+# Paquetes NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Configuración del usuario
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Archivos de bloqueo
+project.lock.json
+project.fragment.lock.json
+project.nuget.cache
+
+# Configuración local de Visual Studio
+.vs/
+.vscode/
+*.csproj.user
+*.csproj.vspscc
+*.csproj.vspscc
+*.sln.docstates
+.vs
+
+# Archivos de configuración de carga
+appsettings.*.json
+
+# Herramientas de análisis y pruebas
+TestResults/
+Coverage/
+
+# Archivos de registro y temporales
+*.log
+*.tmp
+*.temp
+*.pid
+
+# Archivos de caché y dependencias
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Archivos de cobertura
+coverage/
+
+# Archivos de servidor
+localhost-ssl/
+
+# Archivos generados por el sistema
+.DS_Store
+Thumbs.db

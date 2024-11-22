@@ -1,0 +1,6 @@
+@LibreriaFullStackBackEndinC_HostAddress = http://localhost:5057
+
+GET {{LibreriaFullStackBackEndinC_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
