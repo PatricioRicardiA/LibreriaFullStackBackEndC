@@ -40,7 +40,8 @@ namespace LibreriaFullStackBackEndinC.Controllers
                 return BadRequest();
             }
 
-            _dbContext.Books.Add(book);
+            //_dbContext.Books.Add(book);
+            _dbContext.InsertBook(book.title,book.author,book.pages,book.price);
             await _dbContext.SaveChangesAsync();
 
             return CreatedAtAction(nameof(getBookById), new { id = book.id }, book);
