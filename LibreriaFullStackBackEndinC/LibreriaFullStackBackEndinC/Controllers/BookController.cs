@@ -40,8 +40,8 @@ namespace LibreriaFullStackBackEndinC.Controllers
                 return BadRequest();
             }
 
-            //_dbContext.Books.Add(book);
-            _dbContext.InsertBook(book.title,book.author,book.pages,book.price);
+            _dbContext.Books.Add(book);
+            //_dbContext.InsertBook(book.title,book.author,book.pages,book.price);
             await _dbContext.SaveChangesAsync();
 
             return CreatedAtAction(nameof(getBookById), new { id = book.id }, book);
@@ -65,6 +65,7 @@ namespace LibreriaFullStackBackEndinC.Controllers
             if (bookToDelete != null)
             {
                 _dbContext.Books.Remove(bookToDelete);
+                await _dbContext.SaveChangesAsync();
                 return NoContent();
             }
             else { return NotFound(); }
